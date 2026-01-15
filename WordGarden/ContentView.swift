@@ -39,7 +39,7 @@ struct ContentView: View {
              .multilineTextAlignment(.center)
              .padding()
          
-         Text("________")
+         Text("_ _ _ _ _ _ _ _")
              .font(.title)
          
          if playAgainHidden{
@@ -51,19 +51,25 @@ struct ContentView: View {
                          RoundedRectangle(cornerRadius: 5).stroke(.gray,lineWidth: 2)
                      }
                  Button("Guess a Letter:"){
+                     playAgainHidden = false
                  }
                  .buttonStyle(.bordered)
                  .tint(.mint)
              }
          } else {
         Button("Another Word?"){
+            playAgainHidden = true
          }
          .buttonStyle(.borderedProminent)
          .tint(.mint)
          }
          Spacer()
+         
+         Image(imageName)
+             .resizable()
+             .scaledToFit( )
         }
-        .padding()
+     .ignoresSafeArea(edges: .bottom)
     }
 }
 
